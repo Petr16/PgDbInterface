@@ -24,6 +24,19 @@ namespace PgDbInterface.CustomerManager
             return ExecFuncDataSet("get_flight_stages", parameters, cancellationToken);
         }
 
+
+        /// <summary>
+        /// Получить заявки.
+        /// <para/>
+        /// Данный метод является лишь примером вызова хранимой функции. В нормальных условиях список заявок должен быть получен средствами Entity Framework.
+        /// </summary>
+        /// <param name="cancellationToken">Токен для отмены вызова функции</param>
+        /// <returns></returns>
+        public Task<DataSet> GetRequests(CancellationToken cancellationToken = default)
+        {
+            return ExecFuncDataSet("get_requests", cancellationToken);
+        }
+
         /// <summary>
         /// Получить пассажиров, выполняющих посадку на указанной остановке
         /// </summary>
